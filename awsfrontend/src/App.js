@@ -1,14 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LoginPage from './Components/Login';
+import SignupForm from './Components/Signin';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>Hello from AWS</h2>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<LoginPage />} />
+        <Route exact path="/signup" element={<SignupForm />} />
+      </Routes>
+    </Router>
   );
 }
 
